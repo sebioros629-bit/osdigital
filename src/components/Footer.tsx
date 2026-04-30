@@ -20,7 +20,7 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { name: "Instagram", icon: <Camera className="w-5 h-5" />, href: "#" },
+    { name: "Instagram", icon: <Camera className="w-5 h-5" />, href: "https://www.instagram.com/osdigital.co/" },
     { name: "TikTok", icon: <Music2 className="w-5 h-5" />, href: "#" },
   ];
 
