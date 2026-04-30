@@ -13,13 +13,16 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <main className="relative bg-os-bg w-full">
+      {/* 1. The Interactive Hero Experience */}
       <HeroModelScroll />
+      
+      {/* 2. Main Page Content */}
       <div className="relative z-20 bg-transparent">
         <WorkSection />
+        <PortfolioSection />
         <ServicesSection />
         <WhyOsDigitalSection />
         <ProcessSection />
-        <PortfolioSection />
         <TestimonialsSection />
         <PricingSection />
         <CTASection />
