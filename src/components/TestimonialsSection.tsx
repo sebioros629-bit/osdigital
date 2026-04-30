@@ -12,22 +12,19 @@ export default function TestimonialsSection() {
       role: "CEO, GlowUp Beauty",
       quote: "OsDigital changed our creative game. We went from 2 weeks per video to 48 hours. Our ROAS tripled in the first month.",
       image: "/images/avatar.png",
-      stats: "320% ROAS Improvement"
     },
     {
       name: "Sarah Jenkins",
       role: "Founder, FitTech",
       quote: "The realism is insane. Our customers thought we hired professional actors. The speed at which they iterate is unmatched.",
       image: "/images/v2-avatar.png",
-      stats: "48h Delivery"
     },
     {
       name: "Mark Rivera",
       role: "Marketing Director, Aura",
       quote: "Scaling our ad spend was impossible without a steady stream of creatives. OsDigital provided exactly what we needed to grow.",
       image: "/images/avatar.png",
-      stats: "50+ Videos Delivered"
-    }
+    },
   ];
 
   const sectionRef = useRef<HTMLElement>(null);

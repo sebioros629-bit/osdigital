@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display, League_Spartan } from "next/font/google";
 import "./globals.css";
+import SmoothScroll from "@/components/SmoothScroll";
+import Navbar from "@/components/Navbar";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -21,9 +23,6 @@ export const metadata: Metadata = {
   title: "OsDigital | AI-Powered UGC Ad Creator",
   description: "OsDigital creates realistic UGC-style ads powered by AI, helping businesses launch high-quality content without filming, actors, or expensive agencies.",
 };
-
-import SmoothScroll from "@/components/SmoothScroll";
-import Navbar from "@/components/Navbar";
 
 export default function RootLayout({
   children,
