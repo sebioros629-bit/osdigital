@@ -1,91 +1,139 @@
 "use client";
 
-import Link from "next/image";
-import { Twitter, Instagram, Linkedin, ArrowUp } from "lucide-react";
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { Camera, Music2, Mail, ArrowUp } from "lucide-react";
 
-export default function Footer() {
+const Footer = () => {
   const scrollToTop = () => {
-    const lenis = (window as any).lenis;
-    lenis?.scrollTo(0, { duration: 1.5, easing: (t: number) => 1 - Math.pow(1 - t, 3) });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const navLinks = [
+    { name: "About Us", href: "#about" },
+    { name: "Solutions", href: "#services" },
+    { name: "Process", href: "#process" },
+    { name: "Portfolio", href: "#portfolio" },
+    { name: "Pricing", href: "#pricing" },
+    { name: "Testimonials", href: "#testimonials" },
+  ];
+
+  const socialLinks = [
+    { name: "Instagram", icon: <Camera className="w-5 h-5" />, href: "#" },
+    { name: "TikTok", icon: <Music2 className="w-5 h-5" />, href: "#" },
+  ];
+
   return (
-    <footer id="footer" className="bg-os-bg py-24 md:py-32 relative z-30 border-t border-white/5">
-      <div className="container-os">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
-          
-          {/* Brand & Info */}
-          <div className="lg:col-span-5">
-            <div className="flex items-center gap-3 mb-10">
-              <div className="w-10 h-10 relative">
-                 <img src="/images/logo.png" alt="OsDigital" className="w-full h-full object-contain" />
+    <footer id="footer" className="bg-white pt-24 pb-12 px-6 border-t border-slate-100 font-sans relative z-30">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-24">
+          {/* Brand Column */}
+          <div className="md:col-span-1">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="relative w-12 h-12">
+                <Image 
+                  src="/images/footer-logo.png" 
+                  alt="OsDigital Logo" 
+                  fill
+                  className="object-contain"
+                />
               </div>
-              <span className="text-white font-black text-2xl tracking-tighter uppercase">OsDigital</span>
+              <h2 className="text-2xl font-bold text-slate-950 tracking-tighter">
+                OsDigital
+              </h2>
             </div>
-            
-            <p className="text-white/40 text-lg font-medium leading-relaxed max-w-sm mb-12">
-              Transforming how brands create video content. AI-powered speed, human-grade realism.
+            <p className="text-slate-900/40 text-sm font-medium leading-relaxed max-w-[200px]">
+              Elevating brands through premium AI-powered creative solutions.
             </p>
+          </div>
 
-            <div className="flex items-center gap-6">
-              {[Twitter, Instagram, Linkedin].map((Icon, i) => (
-                <a key={i} href="#" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-white hover:text-os-bg transition-all">
-                  <Icon className="w-5 h-5" />
-                </a>
+          {/* Navigation Column */}
+          <div>
+            <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#0ea5e9] mb-8">
+              Navigation
+            </h3>
+            <ul className="space-y-4">
+              {navLinks.map((link) => (
+                <li key={link.name}>
+                  <a 
+                    href={link.href} 
+                    className="text-slate-950/60 hover:text-[#0ea5e9] text-sm font-bold uppercase tracking-widest transition-colors"
+                  >
+                    {link.name}
+                  </a>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
 
-          {/* Links Grid */}
-          <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-12">
-            <div>
-              <h4 className="text-white font-black uppercase text-[10px] tracking-[0.3em] mb-10 opacity-30">Platform</h4>
-              <ul className="space-y-6">
-                {["Solutions", "Portfolio", "Pricing", "Process"].map((link) => (
-                  <li key={link}>
-                    <a href={`#${link.toLowerCase()}`} className="text-white/60 hover:text-white font-bold transition-colors uppercase text-xs tracking-widest">{link}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-white font-black uppercase text-[10px] tracking-[0.3em] mb-10 opacity-30">Company</h4>
-              <ul className="space-y-6">
-                {["About Us", "Contact", "Privacy", "Terms"].map((link) => (
-                  <li key={link}>
-                    <a href="#" className="text-white/60 hover:text-white font-bold transition-colors uppercase text-xs tracking-widest">{link}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="col-span-2 md:col-span-1">
-               <button 
-                 onClick={scrollToTop}
-                 className="group flex items-center gap-4 text-white font-black uppercase text-[10px] tracking-[0.4em] mb-10 hover:text-sky-300 transition-colors"
-               >
-                 Back to Top
-                 <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:translate-y-[-5px] transition-transform">
-                   <ArrowUp className="w-4 h-4" />
-                 </div>
-               </button>
-            </div>
+          {/* Connect Column */}
+          <div>
+            <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#0ea5e9] mb-8">
+              Connect
+            </h3>
+            <ul className="space-y-4">
+              {socialLinks.map((link) => (
+                <li key={link.name}>
+                  <a 
+                    href={link.href} 
+                    className="flex items-center gap-3 text-slate-950/60 hover:text-[#0ea5e9] text-sm font-bold uppercase tracking-widest transition-colors group"
+                  >
+                    <span className="group-hover:scale-110 transition-transform">{link.icon}</span>
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
 
+          {/* Contact Column */}
+          <div>
+            <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#0ea5e9] mb-8">
+              Inquiries
+            </h3>
+            <div className="space-y-6">
+              <a 
+                href="mailto:contact@osdigital.net" 
+                className="flex items-center gap-3 text-slate-950 font-bold text-sm tracking-tight hover:text-[#0ea5e9] transition-colors group"
+              >
+                <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-[#0ea5e9]/10 transition-colors">
+                  <Mail className="w-4 h-4 text-[#0ea5e9]" />
+                </div>
+                contact@osdigital.net
+              </a>
+              
+              <button 
+                onClick={scrollToTop}
+                className="flex items-center gap-3 text-[#0ea5e9] font-bold text-[10px] uppercase tracking-[0.2em] group"
+              >
+                <div className="w-10 h-10 rounded-full border border-slate-100 flex items-center justify-center group-hover:bg-slate-50 transition-colors">
+                  <ArrowUp className="w-4 h-4" />
+                </div>
+                Back to top
+              </button>
+            </div>
+          </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-32 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
-           <p className="text-white/20 text-[10px] font-bold uppercase tracking-[0.2em]">
-             © 2026 OsDigital AI. All Rights Reserved.
-           </p>
-           <div className="flex items-center gap-8 text-white/20 text-[10px] font-bold uppercase tracking-[0.2em]">
-             <span className="hover:text-white transition-colors cursor-pointer">Built with Passion</span>
-             <span className="hover:text-white transition-colors cursor-pointer">London / Global</span>
-           </div>
+        <div className="pt-12 border-t border-slate-100 flex flex-col md:flex-row items-center justify-between gap-6">
+          <p className="text-slate-900/30 text-[10px] font-bold uppercase tracking-widest">
+            © {new Date().getFullYear()} OsDigital. All rights reserved.
+          </p>
+          
+          <div className="flex items-center gap-8">
+            <Link href="/privacy" className="text-slate-900/30 hover:text-slate-950 text-[10px] font-bold uppercase tracking-widest transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="text-slate-900/30 hover:text-slate-950 text-[10px] font-bold uppercase tracking-widest transition-colors">
+              Terms of Service
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;
