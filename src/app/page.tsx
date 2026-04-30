@@ -19,10 +19,10 @@ export default function Home() {
       {/* 2. Main Page Content */}
       <div className="relative z-20 bg-transparent">
         <WorkSection />
-        <PortfolioSection />
         <ServicesSection />
         <WhyOsDigitalSection />
         <ProcessSection />
+        <PortfolioSection />
         <TestimonialsSection />
         <PricingSection />
         <CTASection />
