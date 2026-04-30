@@ -242,6 +242,7 @@ export default function PortfolioSection() {
     <div ref={triggerRef} className="bg-white overflow-hidden">
       <section id="portfolio" className="h-screen flex items-center relative z-30">
         <div ref={sectionRef} className="flex items-center px-10 md:px-20 lg:px-32 gap-32">
+          {/* INTRO BLOCK */}
           <div className="shrink-0 w-[320px] md:w-[450px]">
             <span className="text-sky-500 text-[10px] md:text-xs font-bold uppercase tracking-[0.4em] mb-8 block">
               PRODUCTION QUALITY
@@ -264,7 +265,7 @@ export default function PortfolioSection() {
                 <span className="text-sky-400 font-bold text-xs">01</span>
                 <div className="flex gap-2">
                   {[...Array(5)].map((_, i) => (
-                    <div key={i} className={`h-1 rounded-full transition-all duration-500 ${i === 0 ? \"w-10 bg-sky-400\" : \"w-6 bg-[#0F172A]/10\"}`} />
+                    <div key={i} className={`h-1 rounded-full transition-all duration-500 ${i === 0 ? "w-10 bg-sky-400" : "w-6 bg-[#0F172A]/10"}`} />
                   ))}
                 </div>
                 <span className="text-[#0F172A]/20 font-bold text-xs tracking-widest">05</span>
@@ -272,26 +273,29 @@ export default function PortfolioSection() {
             </div>
           </div>
 
-          <div className=\"flex gap-8 items-center py-20\">
+          {/* VIDEO CARDS */}
+          <div className="flex gap-8 items-center py-20">
             {demos.map((demo) => (
               <VideoCard key={demo.id} demo={demo} />
             ))}
           </div>
 
-          <div className=\"portfolio-cta shrink-0 w-[350px] md:w-[500px]\">
-            <span className=\"text-sky-500 text-[10px] md:text-xs font-bold uppercase tracking-[0.4em] mb-8 block\">
+          {/* FINAL CTA BLOCK */}
+          <div className="portfolio-cta shrink-0 w-[350px] md:w-[500px]">
+            <span className="text-sky-500 text-[10px] md:text-xs font-bold uppercase tracking-[0.4em] mb-8 block">
               THE NEXT STEP
             </span>
-            <h2 className=\"text-5xl md:text-7xl font-black uppercase leading-[0.9] tracking-tighter text-[#0F172A] mb-12\">
+            <h2 className="text-5xl md:text-7xl font-black uppercase leading-[0.9] tracking-tighter text-[#0F172A] mb-12">
               Ready <br />
               to <br />
-              <span className=\"text-sky-400\">scale?</span>
+              <span className="text-sky-400">scale?</span>
             </h2>
-            <a href=\"#contact\" className=\"group h-20 px-12 bg-[#0F172A] text-white rounded-full font-black text-sm uppercase tracking-[0.2em] hover:bg-sky-400 hover:scale-105 transition-all duration-500 flex items-center gap-6 shadow-2xl shadow-sky-400/20 w-fit\">
+            <a href="#contact" className="group h-20 px-12 bg-[#0F172A] text-white rounded-full font-black text-sm uppercase tracking-[0.2em] hover:bg-sky-400 hover:scale-105 transition-all duration-500 flex items-center gap-6 shadow-2xl shadow-sky-400/20 w-fit">
               <span>Work With Us</span>
-              <ArrowRight className=\"w-6 h-6 group-hover:translate-x-3 transition-transform duration-500\" />
+              <ArrowRight className="w-6 h-6 group-hover:translate-x-3 transition-transform duration-500" />
             </a>
           </div>
+
         </div>
       </section>
     </div>
