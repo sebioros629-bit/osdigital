@@ -113,7 +113,7 @@ const CTASection = () => {
 
         {/* CTA Button */}
         <div className="mb-14">
-          <a href="#contact" className="group h-16 md:h-20 px-10 md:px-14 bg-white hover:bg-slate-50 text-[#0ea5e9] rounded-full font-bold text-sm md:text-base uppercase tracking-widest transition-all shadow-[0_20px_50px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_30px_60px_-12px_rgba(0,0,0,0.1)] hover:-translate-y-1 flex items-center gap-4 mx-auto border border-slate-100 w-fit">
+          <a href="mailto:contact@osdigital.net" className="group h-16 md:h-20 px-10 md:px-14 bg-white hover:bg-slate-50 text-[#0ea5e9] rounded-full font-bold text-sm md:text-base uppercase tracking-widest transition-all shadow-[0_20px_50px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_30px_60px_-12px_rgba(0,0,0,0.1)] hover:-translate-y-1 flex items-center gap-4 mx-auto border border-slate-100 w-fit">
             <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#0ea5e9] flex items-center justify-center text-white transition-transform group-hover:scale-110">
               <Zap className="w-4 h-4 md:w-5 md:h-5 fill-white" />
             </div>
