@@ -6,4 +6,4 @@ const nextConfig: NextConfig = {
 
 export default nextConfig;
 
-// Trigger redeployment: 2026-04-30-22-32
+// FORCE REDEPLOY: 2026-04-30T22:37:30Z-UNIQUE-SYNC
